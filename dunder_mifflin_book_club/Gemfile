@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'carrier_wave_base64_uploader', '~> 0.1.2'
+# Use ActiveStorage variant
+# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.9', '>= 4.9.2'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

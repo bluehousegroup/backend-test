@@ -4,6 +4,9 @@
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
+  <% if @book.cover_image.url != nil %>
+		<%= image_tag @book.cover_image.url, height: '256', width: '256' %>
+  <% end %>
 
 <p>
   <strong>Auhtor:</strong>

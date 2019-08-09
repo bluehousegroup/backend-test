@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  require "base64"
 
   # GET /books
   # GET /books.json
@@ -123,6 +124,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :auhtor, :publish_date, :description)
+      params.require(:book).permit(:title, :author, :publish_date, :description, :cover_image)
     end
 end
