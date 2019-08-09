@@ -1,43 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<div class="container">
+  <h1>The 'Finer Things' Book Club</h1>
+  <hr>
+  Add New Book <%= link_to material_icon.create_new_folder, new_book_path %> <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Up</th>
-      <th>Down</th>
-      <th>Title</th>
-      <th>Auhtor</th>
-      <th>Publish date</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
   <% if session[:sort_mode] == "c" %>
-  Sort By: <a href="/books?s=a">Author</a> | Custom
+    Sort By: <a href="/books?s=a">Author</a> | Custom
   <% else %>
-  Sort By: Author | <a href="/books?s=c">Custom</a>
+    Sort By: Author | <a href="/books?s=c">Custom</a>
   <% end %>
-
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= link_to "Up",  "/books/#{book.id}/move_up" %></td>
-        <td><%= link_to "Down",  "/books/#{book.id}/move_down" %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.publish_date %></td>
-        <td><%= book.description %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Book', new_book_path %>
+  
+  <hr>
+  <% @books.each do |book| %>
+    <%= render 'book_list', book: book %>
+  <% end %>
+</div>

@@ -1,3 +1,12 @@
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-100y'
+  });
+});
+</script>
+
 <%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
@@ -13,27 +22,27 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author %>
+    <%= form.text_field :author, :class => 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :publish_date %>
-    <%= form.date_select :publish_date %>
+    <%= form.text_field :publish_date, :class => 'form-control datepicker' %>
   </div>
 
   <div class="field">
     <%= form.label :cover_image %>
     <%= form.file_field :cover_image %>
   </div>
-  
+
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    Synopsis
+    <%= form.text_area :description, :class => 'form-control' %>
   </div>
 
   <div class="actions">

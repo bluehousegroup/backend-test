@@ -39,6 +39,11 @@ gem 'carrier_wave_base64_uploader', '~> 0.1.2'
 # gem 'mini_magick', '~> 4.8'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-datepicker-rails'
+gem 'material_icons'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

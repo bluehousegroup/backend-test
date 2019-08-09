@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
+<center>
+	<div class="container">
+  		<h2><%= @book.title %></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-  <% if @book.cover_image.url != nil %>
-		<%= image_tag @book.cover_image.url, height: '256', width: '256' %>
-  <% end %>
+  		<% if @book.cover_image.url != nil %>
+			<%= image_tag @book.cover_image.url, height: '256', width: '256' %>
+  		<% end %>
+  
+  		<br><br>
+		<p>
+  			<strong>By:</strong>
+  			<%= @book.author %>
+		</p>
 
-<p>
-  <strong>Auhtor:</strong>
-  <%= @book.author %>
-</p>
+		<p>
+  			<strong>Published On:</strong>
+  			<%= @book.publish_date %>
+		</p>
 
-<p>
-  <strong>Publish date:</strong>
-  <%= @book.publish_date %>
-</p>
+		<p>
+  			<strong>Synopsis:</strong><br>
+  			<%= @book.description %>
+		</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
+		<hr>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+		<%= link_to material_icon.view_list, books_path %> | 
+		<%= link_to material_icon.edit, edit_book_path(@book) %>
+	</div>
+</center>

@@ -1,6 +1,8 @@
-<h1>Editing Book</h1>
+<div class="container">
+	<h1>Editing Book '<%= @book.title %>' </h1>
 
-<%= render 'form', book: @book %>
+	<%= render 'form', book: @book %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+	<%= link_to material_icon.view_list, books_path %> | 
+	<%= link_to material_icon.visibility, @book %>
+</div>
