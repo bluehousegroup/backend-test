@@ -1,20 +1,16 @@
+ <!-- Book Row Listing -->
 <div class="row">
-	<div class="col-xs-2 col-xs-offset-1">
-		<%= link_to material_icon.delete_forever, book, method: :delete, data: { confirm: "Delete '#{book.title}' ?" } %>
-		<%= link_to material_icon.arrow_drop_up,  "/books/#{book.id}/move_up" %>
-		<%= link_to material_icon.arrow_drop_down,  "/books/#{book.id}/move_down" %>
-		<%= link_to material_icon.visibility, book %> 
-		<%= link_to material_icon.edit, edit_book_path(book) %>
-	</div>
-	<% if book.cover_image.url != nil %>
-		<div class="col-xs-2 col-xs-offset-1">
-			<%= image_tag book.cover_image.url, height: '64', width: '64' %>
-		</div>
-	<% end %>
-	<div class="col-md-2 col-xs-offset-1">
-	    <b><%= book.title %></b> 
-	</div>
-	<div class="col-md-2 col-xs-offset-1">
-	    by <%= book.author %> 
-	</div>
+	<div class="col-md-7">
+		<h3><span class="book_title"><%= book.title %></span> by <span class="book_author"><%= book.author %></span></h3><br>
+        <% if book.cover_image.url != nil %>
+        	<div class="book_list_cover">
+        		<%= link_to image_tag(book.cover_image.url, height: '64', width: '64'), book, class: 'image_link' %>
+
+			</div>
+		<% end %>
+ 		<span class="book_synopsis_short"><%= book.synopsis_short %> <%= link_to "... more", book %></span><br><br>
+        <p>Published: <%= book.publish_date %></p>
+    	<%= render 'book_list_buttons', book: book %>
+    </div>
 </div>
+<hr class="my-4">

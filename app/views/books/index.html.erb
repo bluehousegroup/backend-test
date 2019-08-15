@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Reading List</h1>
+  <h1>Reading List <%= link_to "Add New Book", new_book_path, class: "btn btn-primary" %></h1>
   <hr>
-  Add New Book <%= link_to material_icon.create_new_folder, new_book_path %> <br>
+  
 
 
   <% if session[:sort_mode] == "c" %>
