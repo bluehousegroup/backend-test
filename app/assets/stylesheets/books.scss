@@ -1,0 +1,19 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book_title{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.book_author{
+	font-style: italic;
+}
+.book_list_cover{
+	float:left;
+	padding-right: 10px;
+}
+.book_synopsis_short{
+	font-style: italic;
+}

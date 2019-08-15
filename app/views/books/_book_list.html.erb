@@ -1,0 +1,16 @@
+ <!-- Book Row Listing -->
+<div class="row">
+	<div class="col-md-7">
+		<h3><span class="book_title"><%= book.title %></span> by <span class="book_author"><%= book.author %></span></h3><br>
+        <% if book.cover_image.url != nil %>
+        	<div class="book_list_cover">
+        		<%= link_to image_tag(book.cover_image.url, height: '64', width: '64'), book, class: 'image_link' %>
+
+			</div>
+		<% end %>
+ 		<span class="book_synopsis_short"><%= book.synopsis_short %> <%= link_to "... more", book %></span><br><br>
+        <p>Published: <%= book.publish_date %></p>
+    	<%= render 'book_list_buttons', book: book %>
+    </div>
+</div>
+<hr class="my-4">

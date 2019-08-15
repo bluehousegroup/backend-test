@@ -1,0 +1,5 @@
+<%= link_to 'View Book', book, class: 'btn btn-primary' %>
+<%= link_to 'Edit Book', edit_book_path(book), class: 'btn btn-primary' %>
+<%= link_to "Move Up",  "/books/#{book.id}/move_up", class: 'btn btn-primary'	 %>
+<%= link_to "Move Down",  "/books/#{book.id}/move_down", class: 'btn btn-primary' %>
+<%= link_to 'Remove Book', book, method: :delete, data: { confirm: "Remove '#{book.title}' ?" }, class: 'btn btn-danger' %>

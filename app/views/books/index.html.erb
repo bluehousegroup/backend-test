@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Reading List <%= link_to "Add New Book", new_book_path, class: "btn btn-primary" %></h1>
+  <hr>
+  
+
+
+  <% if session[:sort_mode] == "c" %>
+    Sort By: <a href="/books?s=a">Author</a> | Custom
+  <% else %>
+    Sort By: Author | <a href="/books?s=c">Custom</a>
+  <% end %>
+  
+  <hr>
+  <% @books.each do |book| %>
+    <%= render 'book_list', book: book %>
+  <% end %>
+</div>
