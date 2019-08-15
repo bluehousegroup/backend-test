@@ -12213,3 +12213,281 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 186ms (Views: 181.8ms | ActiveRecord: 0.3ms)
 
 
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-08-15 12:27:11 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l94ffl08p6J0Qoo6Nsbt4s8M+fqTPHl9/0I/VeRVc6Z3Hb0cjf9WDZJishQPNoBmuAwwL1RuaASxj/1bd7hosw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 150ms (ActiveRecord: 1.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l94ffl08p6J0Qoo6Nsbt4s8M+fqTPHl9/0I/VeRVc6Z3Hb0cjf9WDZJishQPNoBmuAwwL1RuaASxj/1bd7hosw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 871ms (Views: 752.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-08-15 12:27:16 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ipi4XIwucimwdsFTzcAynRA24HPaxgYjFwgdo0G5PDHCWxo+XO2DhlZW+X30MF8ZZzYpph2UF1pZxd+t0lQnJA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 123ms (ActiveRecord: 0.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ipi4XIwucimwdsFTzcAynRA24HPaxgYjFwgdo0G5PDHCWxo+XO2DhlZW+X30MF8ZZzYpph2UF1pZxd+t0lQnJA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 270ms (Views: 151.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-08-15 12:27:19 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 173ms (Views: 171.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-08-15 12:27:29 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JueEquBEYi2b22BmeFiQRTxQNV0gf6WtvYFA/dKomCErvozGr2Fqw4ZPzYQ2dF7h/NSZkLbMQq5MSFG+j5dwLg==", "user"=>{"email"=>"yes@no.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "yes@no.com"], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (6.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "yes@no.com"], ["encrypted_password", "$2a$11$kJxr3yQ50kZsvQXv69InkuJMH9nPSCVx/3IvGUmRLvC.FToGQKeey"], ["created_at", "2019-08-15 16:27:29.751891"], ["updated_at", "2019-08-15 16:27:29.751891"]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 145ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 12:27:29 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY sort_order DESC[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/_book_list_buttons.html.erb (0.8ms)
+  Rendered books/_book_list.html.erb (4.0ms)
+  Rendered books/_book_list_buttons.html.erb (0.3ms)
+  Rendered books/_book_list.html.erb (1.9ms)
+  Rendered books/index.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 166ms (Views: 158.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 192.168.1.135 at 2019-08-15 12:27:45 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 136ms (Views: 135.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 192.168.1.135 at 2019-08-15 12:28:01 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MBGclfZrGkmcqE6JEVChp/Mdu8xzH2Myt85wSVcNyhG6vncg89JnnxkDlSdDsUiUC3fGwcMq721ZRGe5ZWm1tA==", "user"=>{"email"=>"yes@no.com", "password"=>"[FILTERED]", "remember_me"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "yes@no.com"], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2019-08-15 16:28:01.603771"], ["updated_at", "2019-08-15 16:28:01.604996"], ["id", 3]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://192.168.1.253:3000/
+Completed 302 Found in 149ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 192.168.1.135 at 2019-08-15 12:28:01 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY sort_order DESC[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/_book_list_buttons.html.erb (0.6ms)
+  Rendered books/_book_list.html.erb (2.7ms)
+  Rendered books/_book_list_buttons.html.erb (0.3ms)
+  Rendered books/_book_list.html.erb (2.0ms)
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 136ms (Views: 133.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1" for 192.168.1.135 at 2019-08-15 12:28:10 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 158ms (Views: 148.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 12:29:25 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY sort_order DESC[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/_book_list_buttons.html.erb (0.7ms)
+  Rendered books/_book_list.html.erb (3.3ms)
+  Rendered books/_book_list_buttons.html.erb (0.3ms)
+  Rendered books/_book_list.html.erb (2.2ms)
+  Rendered books/index.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 167ms (Views: 163.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1" for 192.168.1.135 at 2019-08-15 12:29:31 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 158ms (Views: 153.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1" for 192.168.1.135 at 2019-08-15 12:29:34 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 124ms (Views: 121.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2019-08-15 12:29:43 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 152ms (Views: 146.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1/edit" for 192.168.1.135 at 2019-08-15 12:30:03 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (15.6ms)
+  Rendered books/edit.html.erb within layouts/application (18.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 155ms (Views: 145.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 192.168.1.135 at 2019-08-15 12:30:09 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY sort_order DESC[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/_book_list_buttons.html.erb (0.7ms)
+  Rendered books/_book_list.html.erb (2.9ms)
+  Rendered books/_book_list_buttons.html.erb (0.3ms)
+  Rendered books/_book_list.html.erb (1.9ms)
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 136ms (Views: 132.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit" for 192.168.1.135 at 2019-08-15 12:30:12 -0400
+Cannot render console from 192.168.1.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 142ms (Views: 140.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2019-08-15 12:30:45 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 553ms (Views: 519.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-15 12:30:56 -0400
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY sort_order DESC[0m
+  ↳ app/views/books/index.html.erb:14
+  Rendered books/_book_list_buttons.html.erb (0.8ms)
+  Rendered books/_book_list.html.erb (4.6ms)
+  Rendered books/_book_list_buttons.html.erb (0.5ms)
+  Rendered books/_book_list.html.erb (2.5ms)
+  Rendered books/index.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 152ms (Views: 147.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2019-08-15 12:30:58 -0400
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:113
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/elliotmousseau/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (27.0ms)
+  Rendered books/edit.html.erb within layouts/application (31.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 175ms (Views: 170.7ms | ActiveRecord: 0.3ms)
+
+
